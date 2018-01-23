@@ -1,19 +1,22 @@
 <!--index.wxml-->
+<!-- Created by jinsheng.huang on 2018.01.23 -->
 <view class="container">
  <form bindsubmit="formSubmit" bindreset="formReset">
   <view class="section section_gap">
     <view class="section_title">Name:</view>
-    <input name="name" placeholder="Enter your whole name." />
+    <input name="userName" placeholder="Your whole name" bindinput="bindUserNameChange"/>
   </view>
   
   <view class="section section_gap">
     <view class="section_title">Mobile Number:</view>
-    <input name="mobileNumber" placeholder="Number Only." />
+    <input name="mobileNumber" type="number" maxlength="11" placeholder="11 numeric digits" bindinput="bindMobileNumberChange"/>
+    <text class="error_banner" hidden="{{isMobileNumberCorrect}}">{{mobileNumberErrorMessage}}</text>
   </view>
 
   <view class="section section_gap">
     <view class="section_title">Email:</view>
-    <input name="email" placeholder="Your personal email" />
+    <input name="email" type="email" placeholder="Your personal email" bindinput="bindEmailChange"/>
+    <text class="error_banner" hidden="{{isEmailCorrect}}">{{emailErrorMessage}}</text>
   </view>
 
   <view class="section section_gap">
@@ -26,7 +29,7 @@
   </view>
 
   <view class="btn-area">
-    <button class="form_button" formType="submit">Submit</button>
+    <button class="form_button submit_button" formType="submit" type="primary" disabled="{{!isDataCorrect}}">Submit</button>
     <button class="form_button" formType="reset">Reset</button>
   </view>
 </form>

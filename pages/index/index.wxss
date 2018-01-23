@@ -1,11 +1,12 @@
 /**index.wxss**/
+/* Created by jinsheng.huang on 2018.01.23 */
 .section_title{
   font-weight:bold; 
 }
 
 input{ 
-  font-size:12px; 
-  padding:4px 2px; 
+  padding:5rpx 5rpx;
+  margin: 5rpx 0rpx;
   border:solid 1rpx #aacfe4; 
 }
 
@@ -14,5 +15,12 @@ input{
 }
 
 .form_button {
+  font-size:16px; 
   margin: 20rpx 0rpx;
+  overflow: hidden;
+}
+
+.error_banner {
+  color: red;
+  font-size:13px; 
 }
