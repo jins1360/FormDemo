@@ -4,6 +4,9 @@
 const app = getApp()
 
 Page({
+  data: {
+    date: "",
+  },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
@@ -12,6 +15,12 @@ Page({
   },
   onLoad: function () {
     
+  },
+  bindDateChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date: e.detail.value
+    })
   },
   formSubmit: function(e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
