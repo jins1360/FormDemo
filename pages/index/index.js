@@ -53,8 +53,15 @@ Page({
     app.globalData.currentUser = currentUser
     app.globalData.userList.push(currentUser)
     this.dataReset()
-    wx.navigateTo({
-      url: '../couponcode/couponcode'
+    wx.showToast({
+      title: 'loading',
+      icon: 'loading',
+      duration: 100,
+      complete: function (res) {
+        wx.navigateTo({
+          url: '../couponcode/couponcode',
+        })
+      }
     })
   },
   formReset: function() {
