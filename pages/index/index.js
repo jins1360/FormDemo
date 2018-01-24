@@ -13,7 +13,8 @@ Page({
     emailErrorMessage: "",
     isMobileNumberCorrect: true,
     mobileNumberErrorMessage: "",
-    isDataCorrect: false
+    isDataCorrect: false,
+    timestamp: ""
   },
   //事件处理函数
   onLoad: function () {
@@ -48,7 +49,6 @@ Page({
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
     var currentUser = e.detail.value
     let couponCode = this.randomCode()
-    console.log("couponCode: " + couponCode)
     currentUser.couponCode = couponCode
     app.globalData.currentUser = currentUser
     app.globalData.userList.push(currentUser)
@@ -65,7 +65,6 @@ Page({
     })
   },
   formReset: function() {
-    console.log('form发生了reset事件')
     this.dataReset()
   },
   checkMobileNumber: function(mobileNumber) {
@@ -110,6 +109,12 @@ Page({
       this.data.userName.length != 0 &&
       this.data.birthdate.length != 0
     );
+    if (isDataCorrect) {
+      let timestamp = Math.round(new Date().getTime());
+      this.setData({
+        timestamp: timestamp
+      })
+    }
     this.setData({
       isDataCorrect: isDataCorrect
     })
@@ -148,7 +153,8 @@ Page({
       emailErrorMessage: "",
       isMobileNumberCorrect: true,
       mobileNumberErrorMessage: "",
-      isDataCorrect: false
+      isDataCorrect: false,
+      timestamp: ""
     })
   },
   randomCode: function() {
