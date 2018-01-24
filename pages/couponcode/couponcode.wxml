@@ -1,2 +1,9 @@
 <!--pages/couponcode/couponcode.wxml-->
-<text>{{couponCode}}</text>
+<view class="container main_view">
+  <view class="card">
+    <view class="card_content">
+      <text class="card_title">Coupon Code:</text>
+      <text class="card_number">{{couponCode}}</text>
+    </view>
+  </view>
+</view>
