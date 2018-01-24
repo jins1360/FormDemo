@@ -1,2 +1,2 @@
 <!--pages/couponcode/couponcode.wxml-->
-<text>pages/couponcode/couponcode.wxml</text>
+<text>{{couponCode}}</text>

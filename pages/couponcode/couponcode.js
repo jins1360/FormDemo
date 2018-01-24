@@ -1,18 +1,26 @@
 // pages/couponcode/couponcode.js
+//Created by jinsheng.huang on 2018.01.23
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    couponCode: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    let couponCode = app.globalData.currentUser.couponCode
+    if (couponCode) {
+      this.setData({
+        couponCode: couponCode
+      })
+    }
   },
 
   /**

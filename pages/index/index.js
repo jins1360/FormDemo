@@ -46,9 +46,16 @@ Page({
   },
   formSubmit: function(e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    app.globalData.currentUser = e.detail.value
-    app.globalData.userList.push(e.detail.value)
+    var currentUser = e.detail.value
+    let couponCode = this.randomCode()
+    console.log("couponCode: " + couponCode)
+    currentUser.couponCode = couponCode
+    app.globalData.currentUser = currentUser
+    app.globalData.userList.push(currentUser)
     this.dataReset()
+    wx.navigateTo({
+      url: '../couponcode/couponcode'
+    })
   },
   formReset: function() {
     console.log('form发生了reset事件')
@@ -136,5 +143,13 @@ Page({
       mobileNumberErrorMessage: "",
       isDataCorrect: false
     })
+  },
+  randomCode: function() {
+    var result = [];
+    for (var i = 0; i < 7; i++) {
+      var ranNum = Math.ceil(Math.random() * 25); 
+      result.push(String.fromCharCode(65 + ranNum));
+    }
+    return result.join(''); 
   }
 })
