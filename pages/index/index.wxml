@@ -27,6 +27,7 @@
       </view>
     </picker>
   </view>
+  <input name="timestamp" value="{{timestamp}}" hidden="true"/>
 
   <view class="btn-area">
     <button class="form_button submit_button" formType="submit" type="primary" disabled="{{!isDataCorrect}}">Submit</button>
