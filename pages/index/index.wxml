@@ -4,26 +4,26 @@
  <form bindsubmit="formSubmit" bindreset="formReset">
   <view class="section section_gap">
     <view class="section_title">Name:</view>
-    <input name="userName" placeholder="Your whole name" bindinput="bindUserNameChange"/>
+    <input name="userName" placeholder="Your whole name" bindinput="bindUserNameChange" value="{{userName}}"/>
   </view>
   
   <view class="section section_gap">
     <view class="section_title">Mobile Number:</view>
-    <input name="mobileNumber" type="number" maxlength="11" placeholder="11 numeric digits" bindinput="bindMobileNumberChange"/>
+    <input name="mobileNumber" type="number" maxlength="11" placeholder="11 numeric digits" bindinput="bindMobileNumberChange" value="{{mobileNumber}}"/>
     <text class="error_banner" hidden="{{isMobileNumberCorrect}}">{{mobileNumberErrorMessage}}</text>
   </view>
 
   <view class="section section_gap">
     <view class="section_title">Email:</view>
-    <input name="email" type="email" placeholder="Your personal email" bindinput="bindEmailChange"/>
+    <input name="email" type="email" placeholder="Your personal email" bindinput="bindEmailChange" value="{{email}}"/>
     <text class="error_banner" hidden="{{isEmailCorrect}}">{{emailErrorMessage}}</text>
   </view>
 
   <view class="section section_gap">
     <view class="section_title">Birthdate:</view>
-    <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+    <picker mode="date" value="{{birthdate}}" bindchange="bindBirthdateChange">
       <view class="picker">
-        <input name="birthdate" placeholder="Click here to select" value="{{date}}" disabled="disabled"/>
+        <input name="birthdate" placeholder="Click here to select" value="{{birthdate}}" disabled="disabled"/>
       </view>
     </picker>
   </view>

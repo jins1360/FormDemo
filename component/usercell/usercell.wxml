@@ -1,0 +1,5 @@
+<!--pages/component/usercell/usercell.wxml-->
+<text>{{userName}}</text>
+<text>{{mobieNumber}}</text>
+<text>{{email}}</text>
+<text>{{birthdate}}</text>
